@@ -1,0 +1,29 @@
+class Jogador:
+    def __init__(self, nome, vida, ataque):
+        self.nome = nome
+        self.vida = vida
+        self.ataque = ataque
+
+    def atacar(self, alvo):
+        alvo.vida -= self.ataque
+        print(f"{self.nome} atacou {alvo.nome} com {self.ataque} de dano!")
+
+class Monstro:
+    def __init__(self, nome, vida, ataque):
+        self.nome = nome
+        self.vida = vida
+        self.ataque = ataque
+
+    def atacar(self, alvo):
+        alvo.vida -= self.ataque
+        print(f"{self.nome} atacou {alvo.nome} com {self.ataque} de dano!")
+
+# Exemplo de uso das classes
+jogador1 = Jogador("Herói", vida=100, ataque=20)
+monstro1 = Monstro("Dragão", vida=200, ataque=30)
+
+print(f"{jogador1.nome} tem {jogador1.vida} pontos de vida.")
+print(f"{monstro1.nome} tem {monstro1.vida} pontos de vida.")
+
+jogador1.atacar(monstro1)
+print(f"{monstro1.nome} agora tem {monstro1.vida} pontos de vida.")
