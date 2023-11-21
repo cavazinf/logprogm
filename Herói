@@ -1,0 +1,28 @@
+Vamos supor que queremos classificar heróis com base em pontos de ataque e pontos de defesa. Se um herói tiver um determinado número de pontos de ataque e defesa, poderemos classificá-lo como "Iniciante", "Intermediário" ou "Avançado".
+
+Aqui está um exemplo simples:
+
+python
+Copy code
+class Hero:
+    def __init__(self, attack, defense):
+        self.attack = attack
+        self.defense = defense
+
+def classify_hero(hero):
+    if hero.attack <= 50 and hero.defense <= 50:
+        return "Iniciante"
+    elif hero.attack <= 100 and hero.defense <= 100:
+        return "Intermediário"
+    else:
+        return "Avançado"
+
+# Exemplo de uso:
+hero1 = Hero(30, 40)
+hero2 = Hero(80, 90)
+hero3 = Hero(120, 150)
+
+print("Herói 1 é:", classify_hero(hero1))  # Saída: Iniciante
+print("Herói 2 é:", classify_hero(hero2))  # Saída: Intermediário
+print("Herói 3 é:", classify_hero(hero3))  # Saída: Avançado
+Neste exemplo, criamos uma classe Hero para representar os heróis com atributos de ataque e defesa. A função classify_hero determina o nível do herói com base em valores predefinidos de ataque e defesa. Você pode ajustar os valores de limite para cada categoria de nível conforme necessário.
