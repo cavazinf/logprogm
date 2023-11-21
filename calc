@@ -1,0 +1,29 @@
+uponha que estamos usando um sistema de ranqueamento comum, onde ganhar uma partida adiciona pontos, perder uma partida subtrai pontos e empatar não altera a pontuação.
+
+python
+Copy code
+class CalculadoraRankeada:
+    def __init__(self, pontuacao_inicial=1000):
+        self.pontuacao = pontuacao_inicial
+
+    def ganhar_partida(self):
+        self.pontuacao += 20  # Exemplo de valor a ser ajustado conforme a lógica do sistema de ranqueamento
+
+    def perder_partida(self):
+        self.pontuacao -= 20  # Exemplo de valor a ser ajustado conforme a lógica do sistema de ranqueamento
+
+    def empatar_partida(self):
+        pass  # Em um empate, a pontuação não é alterada
+
+    def obter_pontuacao_atual(self):
+        return self.pontuacao
+
+# Exemplo de uso:
+calculadora = CalculadoraRankeada()
+
+calculadora.ganhar_partida()
+print("Pontuação após ganhar uma partida:", calculadora.obter_pontuacao_atual())
+
+calculadora.perder_partida()
+print("Pontuação após perder uma partida:", calculadora.obter_pontuacao_atual())
+Neste exemplo, a classe CalculadoraRankeada tem métodos para representar as ações de ganhar, perder ou empatar uma partida, e um método para obter a pontuação atual do jogador. O ajuste dos valores de pontuação a serem acrescentados ou subtraídos após uma partida é apenas um exemplo e pode variar dependendo do sistema de ranqueamento utilizado.
